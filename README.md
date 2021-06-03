@@ -34,9 +34,18 @@ one can start DroidBot instances with `-humanoid localhost:50405` parameter. Now
 Modify `domain` and `port` values in `config.json` in the same directory to deploy Humanoid service at other addresses.
 
 
-## Useful commands to setup Humandroid by Themis
+## How to setup Humandroid editted by Themis
 
-1. install tensorflow 1.12
+1. Humanoid uses TensorFlow 1.12 (see [this issue](https://github.com/yzygitzh/Humanoid/issues/7)). However, TensorFlow 1.12 is supported by Python 3.5, 3.6 and 3.7 (see [this issue]()).
+Thus, if your Python is newer than these versions, you could install Python 3.6 (follow [this link]()).
+
+```
+sudo apt 
+```
+
+1. create python virtual environment via `virtualenv` and install tensorflow 1.12
+
+What is `virtualenv`? ()
 
 see [link1](https://www.liquidweb.com/kb/how-to-install-tensorflow-on-ubuntu-18-04/), [link2](https://linuxize.com/post/how-to-install-tensorflow-on-ubuntu-18-04/)
 
