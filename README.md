@@ -34,7 +34,7 @@ one can start DroidBot instances with `-humanoid localhost:50405` parameter. Now
 Modify `domain` and `port` values in `config.json` in the same directory to deploy Humanoid service at other addresses.
 
 
-## Usefule commands to setup Humandroid by TingSU
+## Useful commands to setup Humandroid by Themis
 
 1. install tensorflow 1.12
 
