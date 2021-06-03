@@ -65,11 +65,14 @@ pip install -U tensorflow==1.12
 
 Humanoid relies on DroidBot. Thus, you need to setup DroidBot. Please use our version of DroidBot (where we have fixed several issues): https://github.com/the-themis-benchmarks/droidbot/tree/themis-branch
 
+
 ```
+git clone git@github.com:the-themis-benchmarks/droidbot.git
+cd droidbot
+pip install -e .
+
 pip install matplotlib
-
 pip install scipy
-
 pip install pyflann-py3
 ```
 
