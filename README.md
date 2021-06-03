@@ -34,28 +34,38 @@ one can start DroidBot instances with `-humanoid localhost:50405` parameter. Now
 Modify `domain` and `port` values in `config.json` in the same directory to deploy Humanoid service at other addresses.
 
 
-## How to setup Humandroid editted by Themis
+# How to setup Humandroid (editted by Themis)
 
-1. Humanoid uses TensorFlow 1.12 (see [this issue](https://github.com/yzygitzh/Humanoid/issues/7)). However, TensorFlow 1.12 is supported by Python 3.5, 3.6 and 3.7 (see [this issue]()).
-Thus, if your Python is newer than these versions, you could install Python 3.6 (follow [this link]()).
-
-```
-sudo apt 
-```
-
-1. create python virtual environment via `virtualenv` and install tensorflow 1.12
-
-What is `virtualenv`? ()
-
-see [link1](https://www.liquidweb.com/kb/how-to-install-tensorflow-on-ubuntu-18-04/), [link2](https://linuxize.com/post/how-to-install-tensorflow-on-ubuntu-18-04/)
-
-2. install additional moudles
+1. Humanoid uses TensorFlow 1.12 (see [this issue](https://github.com/yzygitzh/Humanoid/issues/7)). However, TensorFlow 1.12 is supported by Python 3.5, 3.6 and 3.7 (see [this issue](https://github.com/tensorflow/tensorflow/issues/39621#issuecomment-629806714)).
+Thus, if your Python version is newer than these versions, you should install old Python version, e.g., Python 3.6 (follow [this link](https://www.snippetbucket.com/ubuntu-20-install-python-3-6/)).
 
 ```
-pip install -U pip
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.6
+```
 
+2. create python virtual environment via `virtualenv` and install tensorflow 1.12
+
+What is `virtualenv`? (https://help.dreamhost.com/hc/en-us/articles/115000695551-Installing-and-using-virtualenv-with-Python-3)
+
+Install `virtualenv`
+```
+apt-get install python3-virtualenv
+cd Humanoid-tool
+virtualenv -p /usr/bin/python3.6 venv
+```
+
+Install TensorFlow (these two links may provide some guidance: [link1](https://www.liquidweb.com/kb/how-to-install-tensorflow-on-ubuntu-18-04/), [link2](https://linuxize.com/post/how-to-install-tensorflow-on-ubuntu-18-04/))
+```
 pip install -U tensorflow==1.12
+```
 
+3. install additional tool and moudles
+
+Humanoid relies on DroidBot. Thus, you need to setup DroidBot. Please use our version of DroidBot (where we have fixed several issues): https://github.com/the-themis-benchmarks/droidbot/tree/themis-branch
+
+```
 pip install matplotlib
 
 pip install scipy
